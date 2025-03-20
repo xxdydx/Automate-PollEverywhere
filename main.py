@@ -6,16 +6,17 @@ import time
 
 
 chrome_options = webdriver.ChromeOptions()
-# directory to existing Google Chrome profile
+# Change the directory to existing Google Chrome profile
 chrome_options.add_argument("--user-data-dir=/Users/{USERNAME}/Library/Application Support/Google/Chrome")  
 chrome_options.add_argument("--profile-directory=Profile 1") 
 
 
-# prevent the system from going to sleep
+# prevent the system from going to sleep (delete the following line if you don't want that to happen)
 caffeinate_process = subprocess.Popen(["caffeinate", "-dims"])
 
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("https://pollev.com/") # Change the link to the Pollev Poll you want to automate
+# Change the link to the Pollev Poll you want to automate
+driver.get("https://pollev.com/") 
 
 time.sleep(5)
 
